@@ -226,7 +226,7 @@ else:
     # about superfluous newlines, so we remove one empty newline at the end of the file.
     for eol in possible_eols:
         eol_len = len(eol)
-        if len(stdoutdata) > 0 and stdoutdata[-eol_len:] == eol:
+            if len(stdoutdata) > 0 and stdoutdata[-eol_len-1:] == eol + eol:
             stdoutdata = stdoutdata[:-eol_len]
 
     lines = [stdoutdata]
@@ -290,7 +290,7 @@ else:
         # about superfluous newlines, so we remove one empty newline at the end of the file.
         for eol in possible_eols:
             eol_len = len(eol)
-            if len(stdoutdata) > 0 and stdoutdata[-eol_len:] == eol:
+            if len(stdoutdata) > 0 and stdoutdata[-eol_len-1:] == eol + eol:
                 stdoutdata = stdoutdata[:-eol_len]
 
         lines = [stdoutdata]
